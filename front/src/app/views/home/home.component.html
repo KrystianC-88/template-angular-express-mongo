@@ -1,0 +1,39 @@
+<div>
+    <h1>Tasks</h1>
+    <table class="task-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Completed</th>
+          <th>Due Date</th>
+          <th>Tags</th>
+          <th>Priority</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description || 'N/A' }}</td>
+          <td>{{ task.completed ? 'Yes' : 'No' }}</td>
+          <td>{{ task.dueDate | date:'medium' || 'N/A' }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let tag of task.tags">{{ tag }}</li>
+            </ul>
+          </td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.createdAt | date:'medium' }}</td>
+          <td>{{ task.updatedAt | date:'medium' || 'N/A' }}</td>
+          <td>
+            <button (click)="taskEdit(task)">Edit</button>
+            <button (click)="taskDelete(task)">Delete</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
