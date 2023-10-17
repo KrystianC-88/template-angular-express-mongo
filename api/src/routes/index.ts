@@ -1,10 +1,11 @@
 import { Router } from "express";
+import { envConfig } from "../envConfig";
 
 const router = Router();
 
-router.get("/", (req, res) => {
+router.get("/env", (req, res) => {
     res.send({
-        "dupa":"taak"
+        "envConfig": envConfig
     })
 
 });

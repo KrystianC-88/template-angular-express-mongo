@@ -6,6 +6,7 @@
     "scripts": {
         "start": "npm run serve",
         "build": "npm run build-ts",
+        "dev": "npm run watch",
         "serve": "node dist/server.js",
         "test": "jest --coverage=false --verbose",
         "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
@@ -25,8 +26,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "dotenv": "^16.3.1",
         "express": "^4.16.2",
         "http-errors": "^1.7.1",
+        "mongoose": "^7.6.3",
         "morgan": "^1.9.1",
         "pug": "^3.0.1"
     },

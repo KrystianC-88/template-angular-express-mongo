@@ -8,7 +8,7 @@ export const app = express();
 // Express configuration
 app.set("port", process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, "../public")));
-
+app.use(express.json());
 
 // Routes
 import index  from "./routes/index";
