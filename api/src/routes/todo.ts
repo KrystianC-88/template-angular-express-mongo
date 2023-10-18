@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { db } from '../models/db.connection'; // Import the db module and mongoose instance
 import TaskModel, { ITask } from '../models/task.model'; // Import the Task model
 
 const router = Router();
@@ -7,6 +6,7 @@ const router = Router();
 // Create a new task
 router.post('/', async (req, res) => {
   try {
+    console.log("Creating a new task");
     const { title, description, completed, dueDate, tags, priority } = req.body;
     const task = new TaskModel({ title, description, completed, dueDate, tags, priority });
     const newTask = await task.save();

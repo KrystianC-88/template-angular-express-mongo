@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskFormComponent } from './components/form/task/task.component';
+import { LatestTaskComponent } from './components/latest-task/latest-task.component';
 
 
 
@@ -19,7 +20,8 @@ import { TaskFormComponent } from './components/form/task/task.component';
     HomeComponent,
     TaskComponent,
     PageNotFoundComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    LatestTaskComponent
   ],
   imports: [
     BrowserModule,

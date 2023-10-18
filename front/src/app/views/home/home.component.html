@@ -1,6 +1,7 @@
 <div>
     <h1>Tasks</h1>
 
+    <app-latest-task [task]="tasks[tasks.length - 1]" />
     <app-form-task (onSubmit)="handleFormSubmit($event)"/>
 
     <table class="task-table">

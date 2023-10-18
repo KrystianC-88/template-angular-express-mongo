@@ -1,4 +1,6 @@
 import express from "express";
+import cors from "cors";
+
 // import logger from "morgan";
 import * as path from "path";
 
@@ -9,7 +11,7 @@ export const app = express();
 app.set("port", process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
-
+app.use(cors());
 // Routes
 import index  from "./routes/index";
 import todo   from "./routes/todo";

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskInterface } from 'src/app/services/todo.models';
-import { TaskService } from 'src/app/services/todo.service';
-import { TaskFormComponent } from 'src/app/components/form/task/task.component'
+import { TaskInterface } from 'src/app/services/task.model';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-home',
@@ -27,13 +26,11 @@ export class HomeComponent implements OnInit {
 
     this.service.addTask($event).subscribe((data) => {
       console.log("Task created:", data);
-
     });
   }
 
   taskDelete(task: TaskInterface){
-    this.service.deleteTask(task._id).subscribe(() => {
-    });
+    this.service.deleteTask(task._id).subscribe(() => {});
   }
 
   taskEdit(task: TaskInterface){
