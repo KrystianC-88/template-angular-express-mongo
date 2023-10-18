@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskInterface } from 'src/app/services/todo.models';
 import { TaskService } from 'src/app/services/todo.service';
+import { TaskFormComponent } from 'src/app/components/form/task/task.component'
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,6 @@ import { TaskService } from 'src/app/services/todo.service';
 })
 export class HomeComponent implements OnInit {
   tasks: TaskInterface[] = [];
-
   constructor(private service: TaskService){}
 
   ngOnInit(){
@@ -19,6 +19,15 @@ export class HomeComponent implements OnInit {
 
     this.service.tasksUpdated$.subscribe(() => {
       this.refreshTasks();
+    });
+  }
+
+  handleFormSubmit($event: any) {
+    console.log($event);
+
+    this.service.addTask($event).subscribe((data) => {
+      console.log("Task created:", data);
+
     });
   }
 

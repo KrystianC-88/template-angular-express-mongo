@@ -40,6 +40,8 @@ export class TaskService {
   }
 
   addTask(post: any): Observable<any> {
+    console.log("Adding task");
+    console.log([post])
     return this.http.post<any>(this.apiUrl, post).pipe(
       tap((data) => {
         this.tasks.push(data); // Update tasks array locally
